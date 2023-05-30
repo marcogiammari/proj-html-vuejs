@@ -1,3 +1,14 @@
+@use './partials/variables.scss' as *;
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.my-subheading {
+    letter-spacing: 1px;
+    font-size: 12px;
+}
+
+.my-purple {
+    color: $purple;
+}

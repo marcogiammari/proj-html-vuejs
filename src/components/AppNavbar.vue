@@ -9,12 +9,12 @@ export default {
 
 <template>
   <!-- navbar -->
-  <nav class="ms-6 me-12 py-3">
+  <nav class="my-purple ms-6 me-12 py-3">
     <div>
       <img src="../assets/img/avada-bakery-logo.png" alt="bakery-logo">
     </div>
     <div>
-      <ul class="font-sans font-semibold tracking-widest">
+      <ul class="my-subheading font-sans font-semibold">
         <a href="#" class="uppercase" v-for="link in menu">
           <li>
             {{ link }}
@@ -33,12 +33,10 @@ export default {
 
 nav {
   @include flex(row, space-between);
-  color: $text-purple;
 
   ul {
     @include flex(row, flex-end, center, 2.5rem);
-    letter-spacing: 2px;
-    font-size: 11px;
+
 
     li:hover div {
       display: block;

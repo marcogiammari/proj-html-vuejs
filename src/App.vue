@@ -1,10 +1,12 @@
 <script>
 import { store } from './data/store';
-import AppNavbar from './components/AppNavbar.vue'
+import AppNavbar from './components/AppNavbar.vue';
+import AppHero from './components/AppHero.vue';
 
 export default {
   components: {
-    AppNavbar
+    AppNavbar,
+    AppHero,
   },
   data() {
     return {
@@ -18,7 +20,7 @@ export default {
   <!-- header -->
   <header>
     <AppNavbar :menu='store.headerMenu' />
-
+    <AppHero />
   </header>
 
   <!-- main -->
@@ -36,6 +38,9 @@ export default {
 @use './styles/partials/variables.scss' as *;
 
 header {
-  background-color: $bg-pink;
+  height: 55rem;
+  background-image: url('./assets/img/hero-header-bakery.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 </style>

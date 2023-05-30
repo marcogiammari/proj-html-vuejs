@@ -1,9 +1,15 @@
 <script>
+import { store } from './data/store';
 import AppNavbar from './components/AppNavbar.vue'
 
 export default {
   components: {
     AppNavbar
+  },
+  data() {
+    return {
+      store
+    }
   }
 }
 </script>
@@ -11,7 +17,7 @@ export default {
 <template>
   <!-- header -->
   <header>
-    <AppNavbar />
+    <AppNavbar :menu='store.headerMenu' />
 
   </header>
 

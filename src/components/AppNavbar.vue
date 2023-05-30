@@ -1,11 +1,8 @@
 <script>
-import { store } from '../data/store';
 export default {
   name: 'AppHeader',
-  data() {
-    return {
-      store
-    }
+  props: {
+    menu: Array
   }
 }
 </script>
@@ -18,7 +15,7 @@ export default {
     </div>
     <div>
       <ul class="font-sans font-semibold tracking-widest">
-        <a href="#" class="uppercase" v-for="link in store.headerMenu">
+        <a href="#" class="uppercase" v-for="link in menu">
           <li>
             {{ link }}
             <div class="hidden h-[2px] mt-2 bg-current"></div>

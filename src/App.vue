@@ -2,11 +2,13 @@
 import { store } from './data/store';
 import AppNavbar from './components/AppNavbar.vue';
 import AppHero from './components/AppHero.vue';
+import AppMain from './components/AppMain.vue';
 
 export default {
   components: {
     AppNavbar,
     AppHero,
+    AppMain,
   },
   data() {
     return {
@@ -24,9 +26,7 @@ export default {
   </header>
 
   <!-- main -->
-  <main>
-
-  </main>
+  <AppMain />
 
   <!-- footer -->
   <footer>

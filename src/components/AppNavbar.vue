@@ -14,7 +14,7 @@ export default {
       <img src="../assets/img/avada-bakery-logo.png" alt="bakery-logo">
     </div>
     <div>
-      <ul class="my-subheading font-sans font-semibold">
+      <ul class="my-subheading">
         <a href="#" class="uppercase" v-for="link in menu">
           <li>
             {{ link }}
@@ -36,6 +36,10 @@ nav {
 
   ul {
     @include flex(row, flex-end, center, 2.5rem);
+
+    li {
+      font-family: 'Roboto', sans-serif;
+    }
 
 
     li:hover div {

@@ -3,11 +3,41 @@
 @tailwind components;
 @tailwind utilities;
 
-.my-subheading {
-    letter-spacing: 1px;
-    font-size: 12px;
+.my-heading {
+    font-family: 'Source Serif Pro', serif;
+    color: $purple;
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    margin-top: 1.5rem;
 }
 
-.my-purple {
+.my-subheading {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: $gray;
+}
+
+.my-purple-btn {
+    background-color: $purple;
+    color: white;
+
+    &:hover {
+        color: $purple;
+        background-color: $pink;
+        transform: scale(1.1);
+        transition: .3s;
+    }
+}
+
+.my-white-btn {
+    background-color: white;
     color: $purple;
+
+    &:hover {
+        background-color: $purple;
+        color: white;
+        transform: scale(1.1);
+        transition: .3s;
+    }
 }

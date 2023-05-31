@@ -16,8 +16,9 @@ export default {
                     ex
                     molestias hic eligendi sit voluptatibus soluta veritatis. Id pariatur architecto cupiditate natus, atque
                     nisi.</p>
-                <button class="my-purple bg-white py-3 px-9 rounded-[8px] text-sm font-semibold">Explore our
-                    products</button>
+                <button class="my-white-btn py-3 px-9 rounded-[8px] text-sm font-semibold">
+                    Explore our products
+                </button>
             </article>
         </div>
         <div class="absolute right-2 top-0 flex flex-col gap-2">
@@ -55,13 +56,6 @@ section {
 
     .box {
         box-shadow: 0 0 10px 5px lightgray;
-    }
-
-    button:hover {
-        background-color: $purple;
-        color: white;
-        transform: scale(1.1);
-        transition: .3s;
     }
 }
 </style>

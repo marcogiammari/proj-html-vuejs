@@ -15,8 +15,8 @@ export default {
 </script>
 
 <template>
-    <section class="pb-48">
-        <div class="w-11/12 flex gap-2 mx-auto px-1">
+    <section>
+        <div class="w-11/12 flex gap-8 mx-auto px-1">
             <article class="w-1/4 flex flex-col items-center gap-6 text-center">
                 <h2 class="my-heading">Find a freshly baked product perfect for you</h2>
                 <p class="text-gray-500">
@@ -24,7 +24,7 @@ export default {
                     Vero dignissimos quae
                     sapiente. Cupiditate nobis quos cumque adipisci accusantium.
                 </p>
-                <button class="my-purple-btn bg-white py-3 px-9 rounded-[8px] text-sm font-semibold">
+                <button class="my-primary-btn bg-white py-3 px-9 rounded-[8px] text-sm font-semibold">
                     Shop All Products
                 </button>
             </article>

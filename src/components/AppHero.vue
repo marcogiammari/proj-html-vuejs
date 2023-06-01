@@ -7,11 +7,11 @@ export default {
 <template>
     <!-- Hero -->
     <section class="relative">
-        <div class="w-11/12 mx-auto px-1 py-48">
+        <div class="w-11/12 mx-auto pt-48">
             <article class="w-1/3">
-                <small class="uppercase my-subheading text-xs text-gray-600 font-semibold">Fresh & tasty bakery every
+                <small class="my-subheading">Fresh & tasty bakery every
                     day</small>
-                <h1 class="my-purple text-6xl">The Perfect Fresh Bread</h1>
+                <h1 class="my-heading">The Perfect Fresh Bread</h1>
                 <p class="text-gray-500 text-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, iure sed
                     ex
                     molestias hic eligendi sit voluptatibus soluta veritatis. Id pariatur architecto cupiditate natus, atque
@@ -43,14 +43,14 @@ export default {
 
 <style lang="scss" scoped>
 @use '../styles/partials/mixins.scss' as *;
-@use '../styles/partials/variables.scss' as *;
 
 section {
     article {
         @include flex(column, space-between, flex-start, 2rem);
 
         h1 {
-            font-family: 'Source Serif Pro', serif;
+            font-size: 3.75rem;
+            line-height: 1;
         }
     }
 

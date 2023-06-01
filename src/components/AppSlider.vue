@@ -57,10 +57,10 @@ export default {
 @use '../styles/partials/variables.scss' as *;
 
 .my-carousel button {
-    background-color: $lightpurple;
+    background-color: $secondarycolor;
 
     &:hover {
-        background-color: $purple;
+        background-color: $primarycolor;
     }
 
     div {
@@ -76,7 +76,7 @@ export default {
     }
 
     p {
-        color: $purple;
+        color: $primarycolor;
     }
 }
 </style>

@@ -15,10 +15,10 @@ export default {
 </script>
 
 <template>
-    <section class="pb-48">
+    <section>
         <div class="w-11/12 mx-auto flex flex-col gap-12">
             <div class="text-center px-1">
-                <AppHeading :heading="this.heading" :subheading="this.subheading" />
+                <AppHeading :heading="heading" :subheading="subheading" />
             </div>
             <div class="flex">
                 <div class="w-1/2" id="corporate"></div>

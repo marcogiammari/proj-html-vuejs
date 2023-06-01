@@ -21,10 +21,10 @@ export default {
 
 <template>
     <section>
-        <div class="flex justify-between w-11/12 mx-auto px-1 py-48">
+        <div class="flex justify-between w-11/12 mx-auto px-1 pt-48 gap-20">
             <article class="w-1/3 flex flex-col items-start gap-8">
                 <AppHeading :heading="this.heading" :subheading="this.subheading" />
-                <button class="my-purple-btn py-3 px-9 rounded-[8px] text-sm font-semibold">Start Shopping</button>
+                <button class="my-primary-btn py-3 px-9 rounded-[8px] text-sm font-semibold">Start Shopping</button>
             </article>
             <div class="my-carousel w-2/3 h-[42rem] flex justify-end">
                 <div class="relative flex gap-5">

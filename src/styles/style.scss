@@ -5,7 +5,7 @@
 
 .my-heading {
     font-family: 'Source Serif Pro', serif;
-    color: $purple;
+    color: $primarycolor;
     font-size: 2.25rem;
     line-height: 2.5rem;
     margin-top: 1.5rem;
@@ -15,16 +15,16 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 12px;
-    color: $gray;
+    color: #676371;
 }
 
-.my-purple-btn {
-    background-color: $purple;
+.my-primary-btn {
+    background-color: $primarycolor;
     color: white;
 
     &:hover {
-        color: $purple;
-        background-color: $pink;
+        color: $primarycolor;
+        background-color: $tertiarycolor;
         transform: scale(1.1);
         transition: .3s;
     }
@@ -32,10 +32,10 @@
 
 .my-white-btn {
     background-color: white;
-    color: $purple;
+    color: $primarycolor;
 
     &:hover {
-        background-color: $purple;
+        background-color: $primarycolor;
         color: white;
         transform: scale(1.1);
         transition: .3s;

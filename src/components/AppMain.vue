@@ -2,12 +2,17 @@
 import AppOurProducts from './AppOurProducts.vue';
 import AppCorporateAndWeddings from './AppCorporateAndWeddings.vue';
 import AppShop from './AppShop.vue';
+import AppBlocks from './AppBlocks.vue';
+import AppLocations from './AppLocations.vue';
+
 export default {
     name: 'AppMain',
     components: {
         AppOurProducts,
         AppCorporateAndWeddings,
-        AppShop
+        AppShop,
+        AppBlocks,
+        AppLocations
     },
     data() {
         return {
@@ -18,9 +23,13 @@ export default {
 </script>
 
 <template>
-    <AppOurProducts />
-    <AppCorporateAndWeddings />
-    <AppShop />
+    <div class="flex flex-col gap-48 mx-auto">
+        <AppOurProducts />
+        <AppCorporateAndWeddings />
+        <AppShop />
+        <AppBlocks />
+        <AppLocations />
+    </div>
 </template>
 
 <style lang="scss"></style>

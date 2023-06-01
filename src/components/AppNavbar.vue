@@ -38,7 +38,8 @@ nav {
     @include flex(row, flex-end, center, 2.5rem);
 
     li {
-      font-family: 'Roboto', sans-serif;
+      color: $primarycolor;
+      font-weight: 600;
     }
 
 

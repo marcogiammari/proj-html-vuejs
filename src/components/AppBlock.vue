@@ -1,15 +1,18 @@
 <script>
+import { services } from '../data/services';
+
 export default {
     name: 'AppBlock',
     props: {
         content: Object
     },
+    data() {
+        return {
+            services
+        }
+    },
     methods: {
-        getImagePath(imgPath) {
-            return new URL(imgPath, import.meta.url).href;
-        },
         getAlign() {
-            console.log(this.content.infoLeft);
             if (!this.content.infoLeft) {
                 return 'flex justify-end'
             }
@@ -20,7 +23,7 @@ export default {
 
 <template>
     <article class="relative text-white w-full">
-        <img class="bg absolute -z-10 h-[48rem] object-cover" :src="getImagePath(content.backgroundSrc)"
+        <img class="bg absolute -z-10 h-[48rem] object-cover" :src="services.getImagePath(content.backgroundSrc)"
             :alt="content.backgroundAlt">
         <div class="h-[48rem] flex flex-col justify-between px-28 pt-16 pb-24">
             <div class="flex justify-between items-center">

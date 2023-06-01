@@ -1,5 +1,6 @@
 <script>
 import AppBlock from './AppBlock.vue';
+
 export default {
     name: 'AppBlocks',
     components: {
@@ -43,7 +44,7 @@ export default {
 
 <template>
     <section>
-        <div class="w-11/12 mx-auto flex flex-col items-center gap-12 h-[1080px]">
+        <div class="w-11/12 mx-auto flex flex-col items-center gap-12">
             <AppBlock :content="content[0]" />
             <div class="grid grid-cols-2 gap-8">
                 <AppBlock :content="content[1]" />

@@ -28,7 +28,7 @@ export default {
             </article>
             <div class="my-carousel w-2/3 h-[42rem] flex justify-end">
                 <div class="relative flex gap-5">
-                    <AppSlider :products="store.products" :slides="2" :info="false" />
+                    <AppSlider :products="store.products" :slides="2" :info="false" :infoHover="true" />
                 </div>
             </div>
         </div>

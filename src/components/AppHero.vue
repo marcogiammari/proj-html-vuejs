@@ -21,7 +21,7 @@ export default {
                 </button>
             </article>
         </div>
-        <div class="absolute right-2 top-0 flex flex-col gap-2">
+        <div class="fixed right-2 top-28 flex flex-col gap-2">
             <div class="box flex flex-col justify-between items-center gap-1 bg-white aspect-square rounded-[4px] p-2">
                 <img src="../assets/img/demos-logo.png" alt="">
                 <span class="text-sm text-gray-500 font-semibold">

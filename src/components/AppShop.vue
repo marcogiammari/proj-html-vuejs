@@ -29,7 +29,7 @@ export default {
                 </button>
             </article>
             <div class="my-carousel w-3/4 relative grid grid-cols-4 gap-6">
-                <AppSlider :products="store.products" :slides="4" :info="true" />
+                <AppSlider :products="store.products" :slides="4" :info="true" :selectHover="true" />
             </div>
         </div>
     </section>

@@ -15,7 +15,8 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 12px;
-    color: #676371;
+    color: #979797;
+    font-weight: 600;
 }
 
 .my-primary-btn {
@@ -38,6 +39,11 @@
 .my-white-btn {
     background-color: white;
     color: $primarycolor;
+    padding: .75rem 2.25rem;
+    border-radius: 8px;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
 
     &:hover {
         background-color: $primarycolor;

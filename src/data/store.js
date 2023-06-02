@@ -1,16 +1,6 @@
 import {reactive} from 'vue'
 
 export const store = reactive({
-    headerMenu: [
-        'home',
-        'shop',
-        'about',
-        'gallery',
-        'locations',
-        'journal',
-        'contact',
-        'my account',
-    ],
     products: [
         {
             name: 'Choco Chip Cookies',
@@ -66,5 +56,11 @@ export const store = reactive({
             minPrice: 15.00,
             maxPrice: 25.00
         },
+    ],
+    icons: [
+        'fa-brands fa-instagram',
+        'fa-brands fa-twitter',
+        'fa-brands fa-facebook-f',
+        'fa-brands fa-pinterest-p'
     ]
 }) 

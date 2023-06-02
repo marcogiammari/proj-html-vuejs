@@ -22,11 +22,11 @@ export default {
             <div class="flex">
                 <div class="w-1/3">
                     <small class="my-subheading">Call us</small>
-                    <p class="pt-2">{{ card.phone }}</p>
+                    <p class="pt-2 text-gray-400">{{ card.phone }}</p>
                 </div>
                 <div class="w-1/3">
                     <small class="my-subheading">Open all week</small>
-                    <p class="pt-2">{{ card.timetable.opens }} - {{ card.timetable.closes }}</p>
+                    <p class="pt-2 text-gray-400">{{ card.timetable.opens }} - {{ card.timetable.closes }}</p>
                 </div>
                 <div class="w-1/3">
                     <button class="my-white-btn py-3 px-9 rounded-[8px] text-sm font-semibold">

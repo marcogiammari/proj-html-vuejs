@@ -3,12 +3,14 @@ import { store } from './data/store';
 import AppNavbar from './components/AppNavbar.vue';
 import AppHero from './components/AppHero.vue';
 import AppMain from './components/AppMain.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default {
   components: {
     AppNavbar,
     AppHero,
     AppMain,
+    AppFooter
   },
   data() {
     return {
@@ -20,8 +22,8 @@ export default {
 
 <template>
   <!-- header -->
-  <header>
-    <AppNavbar :menu='store.headerMenu' />
+  <header id="header">
+    <AppNavbar />
     <AppHero />
   </header>
 
@@ -30,7 +32,7 @@ export default {
 
   <!-- footer -->
   <footer>
-
+    <AppFooter />
   </footer>
 </template>
 

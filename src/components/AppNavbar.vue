@@ -1,8 +1,28 @@
 <script>
+import AppMenu from './AppMenu.vue';
+
 export default {
   name: 'AppHeader',
-  props: {
-    menu: Array
+  components: {
+    AppMenu
+  },
+  data() {
+    return {
+      menu: {
+        items: [
+          'home',
+          'shop',
+          'about',
+          'gallery',
+          'locations',
+          'journal',
+          'contact',
+          'my account',
+        ],
+        isCartActive: false,
+        style: 'uppercase text-xs'
+      }
+    }
   }
 }
 </script>
@@ -13,39 +33,15 @@ export default {
     <div>
       <img src="../assets/img/avada-bakery-logo.png" alt="bakery-logo">
     </div>
-    <div>
-      <ul class="my-subheading">
-        <a href="#" class="uppercase" v-for="link in menu">
-          <li>
-            {{ link }}
-            <div class="hidden h-[2px] mt-2 bg-current"></div>
-          </li>
-        </a>
-        <i class="fa-solid fa-cart-shopping text-sm"></i>
-      </ul>
-    </div>
+    <AppMenu :menu="this.menu" />
   </nav>
 </template>
 
 <style lang="scss" scoped>
 @use '../styles/partials/mixins.scss' as *;
-@use '../styles/partials/variables.scss' as *;
+
 
 nav {
   @include flex(row, space-between);
-
-  ul {
-    @include flex(row, flex-end, center, 2.5rem);
-
-    li {
-      color: $primarycolor;
-      font-weight: 600;
-    }
-
-
-    li:hover div {
-      display: block;
-    }
-  }
 }
 </style>

@@ -21,6 +21,11 @@
 .my-primary-btn {
     background-color: $primarycolor;
     color: white;
+    padding: .75rem 2.25rem;
+    border-radius: 8px;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
 
     &:hover {
         color: $primarycolor;

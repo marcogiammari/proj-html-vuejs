@@ -4,6 +4,7 @@ import AppCorporateAndWeddings from './AppCorporateAndWeddings.vue';
 import AppShop from './AppShop.vue';
 import AppBlocks from './AppBlocks.vue';
 import AppLocations from './AppLocations.vue';
+import AppSharing from './AppSharing.vue';
 
 export default {
     name: 'AppMain',
@@ -12,7 +13,8 @@ export default {
         AppCorporateAndWeddings,
         AppShop,
         AppBlocks,
-        AppLocations
+        AppLocations,
+        AppSharing
     },
     data() {
         return {
@@ -29,6 +31,7 @@ export default {
         <AppShop />
         <AppBlocks />
         <AppLocations />
+        <AppSharing />
     </div>
 </template>
 

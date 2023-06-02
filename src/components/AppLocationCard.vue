@@ -17,7 +17,7 @@ export default {
 <template>
     <div class="w-1/2 flex flex-col text-center text-gray-600 font-semibold">
         <img :src="services.getImagePath(card.thumb)" :alt="card.city">
-        <div :style="card.bg">
+        <div :style="card.bg" class="pb-12">
             <h2 class="my-heading p-4">{{ card.city }}</h2>
             <div class="flex">
                 <div class="w-1/3">

@@ -16,7 +16,8 @@ export default {
 
 <template>
     <div class="w-1/2 flex flex-col text-center text-gray-600 font-semibold">
-        <img :src="services.getImagePath(card.thumb)" :alt="card.city">
+        <img v-show="!card.map" :src="services.getImagePath(card.thumb)" :alt="card.city">
+        <img v-show="card.map" :src="services.getImagePath(card.mapSrc)" alt="card.city">
         <div :style="card.bg" class="pb-12">
             <h2 class="my-heading p-4">{{ card.city }}</h2>
             <div class="flex">
@@ -29,7 +30,8 @@ export default {
                     <p class="pt-2 text-gray-400">{{ card.timetable.opens }} - {{ card.timetable.closes }}</p>
                 </div>
                 <div class="w-1/3">
-                    <button class="my-white-btn py-3 px-9 rounded-[8px] text-sm font-semibold">
+                    <button @click="card.map = !card.map"
+                        class="my-white-btn py-3 px-9 rounded-[8px] text-sm font-semibold">
                         View Map
                     </button>
                 </div>
@@ -38,4 +40,10 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+    width: 872px;
+    height: 577px;
+    object-fit: cover;
+}
+</style>

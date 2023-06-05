@@ -20,7 +20,9 @@ export default {
                         opens: '9:00 AM',
                         closes: '6:00 PM'
                     },
-                    bg: 'background-color: #F1F9FB'
+                    bg: 'background-color: #F1F9FB',
+                    map: false,
+                    mapSrc: '../assets/img/maps-ny.jpg'
                 },
                 {
                     thumb: '../assets/img/london-bk-1200x794.jpg',
@@ -30,7 +32,9 @@ export default {
                         opens: '8:00 AM',
                         closes: '5:00 PM'
                     },
-                    bg: 'background-color: #FAF3E3'
+                    bg: 'background-color: #FAF3E3',
+                    map: false,
+                    mapSrc: '../assets/img/maps-london.png'
                 }
             ]
         }

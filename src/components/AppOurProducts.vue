@@ -26,7 +26,7 @@ export default {
                 <AppHeading :heading="this.heading" :subheading="this.subheading" />
                 <button class="my-primary-btn py-3 px-9 rounded-[8px] text-sm font-semibold">Start Shopping</button>
             </article>
-            <div class="my-carousel w-2/3 h-[42rem] flex justify-end">
+            <div class="my-carousel w-2/3 h-[42rem] flex justify-center">
                 <div class="relative flex gap-5">
                     <AppSlider :products="store.products" :slides="2" :info="false" :infoHover="true" />
                 </div>

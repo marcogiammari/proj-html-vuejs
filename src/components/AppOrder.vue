@@ -1,10 +1,6 @@
 <script>
-import AppHeading from './AppHeading.vue';
 export default {
     name: 'AppOrder',
-    components: {
-        AppHeading
-    }
 }
 </script>
 

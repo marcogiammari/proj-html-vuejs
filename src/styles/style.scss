@@ -52,3 +52,20 @@
         transition: .3s;
     }
 }
+
+#corporate,
+#weddings {
+    height: 45rem;
+
+    small {
+        color: lightgray;
+    }
+
+    h2 {
+        color: white;
+    }
+
+    &:hover .hidden {
+        display: flex;
+    }
+}

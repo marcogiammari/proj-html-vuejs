@@ -8,7 +8,13 @@ export default {
     },
     data() {
         return {
-            store
+            store,
+            slides: 2,
+        }
+    },
+    methods: {
+        getClass() {
+            return `my-carousel w-3/4 relative grid gap-6 grid-cols-${this.slides}`
         }
     }
 }
@@ -28,8 +34,16 @@ export default {
                     Shop All Products
                 </button>
             </article>
-            <div class="my-carousel w-3/4 relative grid grid-cols-4 gap-6">
-                <AppSlider :products="store.products" :slides="4" :info="true" :selectHover="true" />
+            <div class="my-carousel w-3/4 relative grid gap-6 grid-flow-col">
+                <div class="absolute -translate-y-full text-sky-500 py-2 font-bold">
+                    <label for="slides-num" class="uppercase italic">Slides: </label>
+                    <select id="slides-num" v-model="this.slides">
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                </div>
+                <AppSlider :products="store.products" v-model:slides="this.slides" :info="true" :selectHover="true" />
             </div>
         </div>
     </section>

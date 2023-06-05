@@ -1,16 +1,10 @@
 <script>
 export default {
     name: 'AppSlider',
-    props: {
-        products: Array,
-        slides: Number,
-        info: Boolean,
-        infoHover: Boolean,
-        selectHover: Boolean
-    },
+    props: ['products', 'slides', 'info', 'infoHover', 'selectHover'],
     data() {
         return {
-            current: [...Array(this.slides).keys()]
+            current: 0
         }
     },
     methods: {
@@ -18,21 +12,14 @@ export default {
             return new URL(imgPath, import.meta.url).href;
         },
         isDisplayed(i) {
-            return (this.current.includes(i));
+            let diff = i - this.current
+            return diff < this.slides && diff >= 0
         },
         next() {
-            if (this.current.at(-1) <= this.products.length - 2) {
-                for (let i = 0; i < this.current.length; i++) {
-                    this.current[i]++
-                }
-            }
+            this.current == this.products.length - this.slides ? this.current = 0 : this.current++
         },
         previous() {
-            if (this.current[0] > 0) {
-                for (let i = 0; i < this.current.length; i++) {
-                    this.current[i]--
-                }
-            }
+            this.current == 0 ? this.current = this.products.length - this.slides : this.current--
         }
     }
 }
@@ -46,8 +33,8 @@ export default {
         <div class="h-2 w-2 rotate-[225deg]" id="next-btn"></div>
     </button>
     <div class="my-card" v-for="product, i in products" v-show="isDisplayed(i)">
-        <div class="relative">
-            <img :src="getImagePath(product.img)" :alt="product.name">
+        <div class="relative h-full">
+            <img class="h-4/5 w-full" :src="getImagePath(product.img)" :alt="product.name">
             <div class="info-txt text-center" v-show="info">
                 <h3 class="my-heading">{{ product.name }}</h3>
                 <p>${{ product.minPrice.toFixed(2) }} - ${{ product.maxPrice.toFixed(2) }}</p>
@@ -58,8 +45,8 @@ export default {
                 <p class="thin">${{ product.minPrice.toFixed(2) }} - ${{ product.maxPrice.toFixed(2) }}</p>
             </div>
             <div v-show="selectHover" id="select-hover"
-                class="hidden my-heading absolute top-1/2 -translate-y-1/2 text-center w-full">
-                <div class="w-full">
+                class="hidden my-heading absolute top-1/3 -translate-y-1/2 text-center w-full">
+                <div class="w-full font-bold">
                     <a href="#"><span class="uppercase">Select options</span></a> /
                     <a href="#"><span class="uppercase">Quick view</span></a>
                 </div>

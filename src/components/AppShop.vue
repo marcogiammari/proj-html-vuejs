@@ -9,14 +9,20 @@ export default {
     data() {
         return {
             store,
-            slides: 2,
+            productsList: store.products,
+            slides: 4,
+            filter: 'No Filter'
         }
     },
     methods: {
-        getClass() {
-            return `my-carousel w-3/4 relative grid gap-6 grid-cols-${this.slides}`
+        filterProducts() {
+            if (this.filter != 'No Filter') {
+                this.productsList = store.products.filter(e => e.type == this.filter)
+            } else {
+                this.productsList = store.products
+            }
         }
-    }
+    },
 }
 </script>
 
@@ -35,15 +41,27 @@ export default {
                 </button>
             </article>
             <div class="my-carousel w-3/4 relative grid gap-6 grid-flow-col">
-                <div class="absolute -translate-y-full text-sky-500 py-2 font-bold">
-                    <label for="slides-num" class="uppercase italic">Slides: </label>
-                    <select id="slides-num" v-model="this.slides">
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                    </select>
+                <div class="flex gap-4 absolute -translate-y-full text-sky-500 py-2 font-bold">
+                    <div>
+                        <label for="slides-num" class="uppercase italic">Slides: </label>
+                        <select id="slides-num" v-model="this.slides">
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="slides-filter" class="uppercase italic">Filter by: </label>
+                        <select id="slides-filter" v-model="this.filter" @change="filterProducts()">
+                            <option selected>No Filter</option>
+                            <option>Cookies</option>
+                            <option>Cakes</option>
+                            <option>Pastries</option>
+                        </select>
+                    </div>
                 </div>
-                <AppSlider :products="store.products" v-model:slides="this.slides" :info="true" :selectHover="true" />
+                <AppSlider :products="this.productsList" :slides="this.slides" :filter="this.filter" :info="true"
+                    :selectHover="true" />
             </div>
         </div>
     </section>

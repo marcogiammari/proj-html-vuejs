@@ -1,16 +1,16 @@
 <script>
+import { services } from '../data/services'
+
 export default {
     name: 'AppSlider',
-    props: ['products', 'slides', 'info', 'infoHover', 'selectHover'],
+    props: ['products', 'slides', 'info', 'infoHover', 'selectHover', 'filter', 'current'],
     data() {
         return {
+            services,
             current: 0
         }
     },
     methods: {
-        getImagePath(imgPath) {
-            return new URL(imgPath, import.meta.url).href;
-        },
         isDisplayed(i) {
             let diff = i - this.current
             return diff < this.slides && diff >= 0
@@ -26,22 +26,25 @@ export default {
 </script>
 
 <template>
-    <button @click="previous()" class="absolute left-0 bottom-1/2 flex justify-center items-center h-20 w-10 z-10">
+    <button v-if="this.products.length > this.slides" @click="previous()"
+        class="absolute left-0 bottom-1/2 flex justify-center items-center h-20 w-10 z-10">
         <div class="h-2 w-2 rotate-45" id="prev-btn"></div>
     </button>
-    <button @click="next()" class="absolute right-0 bottom-1/2 flex justify-center items-center h-20 w-10 z-10">
+    <button v-if="this.products.length > this.slides" @click="next()"
+        class="absolute right-0 bottom-1/2 flex justify-center items-center h-20 w-10 z-10">
         <div class="h-2 w-2 rotate-[225deg]" id="next-btn"></div>
     </button>
     <div class="my-card" v-for="product, i in products" v-show="isDisplayed(i)">
         <div class="relative h-full">
-            <img class="h-4/5 w-full" :src="getImagePath(product.img)" :alt="product.name">
+            <img class="h-4/5 w-full" :src="services.getImagePath(product.img)" :alt="product.name">
             <div class="info-txt text-center" v-show="info">
                 <h3 class="my-heading">{{ product.name }}</h3>
                 <p>${{ product.minPrice.toFixed(2) }} - ${{ product.maxPrice.toFixed(2) }}</p>
             </div>
             <div v-show="infoHover" id="info-hover"
-                class="hidden my-heading absolute flex-col top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+                class="hidden my-heading absolute flex-col top-1/2 left-1/2 -translate-x-1/2 -translate-y-full text-center">
                 <h5>{{ product.name }}</h5>
+                <p class="text-sm">{{ product.type }}</p>
                 <p class="thin">${{ product.minPrice.toFixed(2) }} - ${{ product.maxPrice.toFixed(2) }}</p>
             </div>
             <div v-show="selectHover" id="select-hover"
@@ -96,7 +99,7 @@ export default {
     color: white;
     font-size: 1.5rem;
 
-    p {
+    p:last-child {
         font-size: 1.25rem;
         font-family: Arial, Helvetica, sans-serif;
     }

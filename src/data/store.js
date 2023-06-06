@@ -1,6 +1,7 @@
 import {reactive} from 'vue'
 
 export const store = reactive({
+    current: 0,
     products: [
         {
             name: 'Choco Chip Cookies',

@@ -1,25 +1,26 @@
 <script>
-import { services } from '../data/services'
+import { services } from '../data/services';
+import { store } from '../data/store';
 
 export default {
     name: 'AppSlider',
     props: ['products', 'slides', 'info', 'infoHover', 'selectHover', 'filter', 'current'],
     data() {
         return {
+            store,
             services,
-            current: 0
         }
     },
     methods: {
         isDisplayed(i) {
-            let diff = i - this.current
+            let diff = i - this.store.current
             return diff < this.slides && diff >= 0
         },
         next() {
-            this.current == this.products.length - this.slides ? this.current = 0 : this.current++
+            this.store.current == this.products.length - this.slides ? this.store.current = 0 : this.store.current++
         },
         previous() {
-            this.current == 0 ? this.current = this.products.length - this.slides : this.current--
+            this.store.current == 0 ? this.store.current = this.products.length - this.slides : this.store.current--
         }
     }
 }

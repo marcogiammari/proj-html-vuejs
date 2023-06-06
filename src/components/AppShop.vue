@@ -11,11 +11,12 @@ export default {
             store,
             productsList: store.products,
             slides: 4,
-            filter: 'No Filter'
+            filter: 'No Filter',
         }
     },
     methods: {
         filterProducts() {
+            this.store.current = 0;
             if (this.filter != 'No Filter') {
                 this.productsList = store.products.filter(e => e.type == this.filter)
             } else {

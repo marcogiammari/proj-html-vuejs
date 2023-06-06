@@ -32,7 +32,7 @@ export default {
                 <div class="w-1/3">
                     <button @click="card.map = !card.map"
                         class="my-white-btn py-3 px-9 rounded-[8px] text-sm font-semibold">
-                        View Map
+                        {{ card.map ? 'Close Map' : 'View Map' }}
                     </button>
                 </div>
             </div>
